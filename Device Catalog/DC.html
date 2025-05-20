@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JustInCase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="DCSatyle.css">
+</head>
+<body>
+    <div class="container">
+        <!-- SIDE -->
+        <div class="sidebar" id="sidebar">
+            <div>
+                <div class="logo">
+                    <h1><span>Just</span><span>In</span><span>Case</span></h1>
+                    <p>Admin</p>
+                </div>
+                
+                <div class="menu-section">
+                    <div class="menu-title">DEVICE MANAGEMENT</div>
+                    <ul class="menu-items">
+                        <li class="menu-item active">
+                            <i class="fas fa-desktop icon"></i> Device Catalog
+                        </li>
+                        <li class="menu-item">
+                            <i class="fas fa-clipboard-list icon"></i>Device Inventory
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="menu-section">
+                    <div class="menu-title">TRANSACTIONS</div>
+                    <ul class="menu-items">
+                        <li class="menu-item">
+                            <i class="fas fa-exchange-alt icon"></i>Transactions
+                        </li>
+                        <li class="menu-item">
+                            <i class="fas fa-clock icon"></i>Late Returns
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="menu-section">
+                    <div class="menu-title">ADMINISTRATION</div>
+                    <ul class="menu-items">
+                        <li class="menu-item">
+                            <i class="fas fa-user-cog icon"></i>Account Settings
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="logout">
+                <ul class="menu-items">
+                    <li class="menu-item">
+                        <i class="fas fa-sign-out-alt icon"></i>Log out
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- MAIN -->
+        <div class="main-content" id="main-content">
+            <div class="header">
+                <button class="menu-toggle" id="menu-toggle">☰</button>
+                <div class="user-info">Hello, Professor!</div>
+            </div>
+            
+            <div class="content">
+                <h1 class="page-title">Device Catalog</h1>
+                
+                <input type="text" class="search-bar" placeholder="Search Device">
+                
+                <div class="filters">
+                    <select class="filter-dropdown">
+                        <option>All Types</option>
+                        <option>Laptops</option>
+                        <option>Tablets</option>
+                        <option>Phones</option>
+                    </select>
+                    
+                    <select class="filter-dropdown">
+                        <option>All</option>
+                        <option>Available</option>
+                        <option>Checked Out</option>
+                    </select>
+                    
+                    <button class="add-button">Add Device</button>
+                </div>
+                
+                <div class="device-grid">
+                    <!-- DC 1 -->
+                    <div class="device-card">
+                        <div class="device-image">
+                            <!-- IMAGE -->
+                            <div style="width: 120px; height: 80px; background-color: #ddd; display: flex; align-items: center; justify-content: center;">Laptop</div>
+                        </div>
+                        <div class="device-info">
+                            <h3 class="device-name">MacBook Pro 14"</h3>
+                            <ul class="device-specs">
+                                <li><span class="spec-icon blue">💻</span> M2 Pro, 16GB RAM</li>
+                                <li><span class="spec-icon red">💾</span> 512GB SSD</li>
+                                <li><span class="spec-icon blue">🖥️</span> 14.2" Liquid XDR</li>
+                                <li><span class="spec-icon green">🔋</span> 8-10 Hour Battery</li>
+                            </ul>
+                            <span class="availability">Available</span>
+                            <div class="device-actions">
+                                <button>Edit</button>
+                                <button class="details">Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- DC2 -->
+                    <div class="device-card">
+                        <div class="device-image">
+                            <!-- IMAGE -->
+                            <div style="width: 120px; height: 80px; background-color: #ddd; display: flex; align-items: center; justify-content: center;">Tablet</div>
+                        </div>
+                        <div class="device-info">
+                            <h3 class="device-name">iPad Pro 12.9"</h3>
+                            <ul class="device-specs">
+                                <li><span class="spec-icon blue">💻</span> M2, 8GB RAM</li>
+                                <li><span class="spec-icon red">💾</span> 256GB SSD</li>
+                                <li><span class="spec-icon blue">🖥️</span> 12.9" Liquid Retina</li>
+                                <li><span class="spec-icon green">🔋</span> 10 Hour Battery</li>
+                            </ul>
+                            <span class="availability">Available</span>
+                            <div class="device-actions">
+                                <button>Edit</button>
+                                <button class="details">Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- DC3 -->
+                    <div class="device-card">
+                        <div class="device-image">
+                            <!-- IMAGE -->
+                            <div style="width: 120px; height: 80px; background-color: #ddd; display: flex; align-items: center; justify-content: center;">Phone</div>
+                        </div>
+                        <div class="device-info">
+                            <h3 class="device-name">iPhone 15 Pro</h3>
+                            <ul class="device-specs">
+                                <li><span class="spec-icon blue">💻</span> A17 Pro, 8GB RAM</li>
+                                <li><span class="spec-icon red">💾</span> 256GB Storage</li>
+                                <li><span class="spec-icon blue">🖥️</span> 6.1" Super Retina XDR</li>
+                                <li><span class="spec-icon green">🔋</span> All-day Battery</li>
+                            </ul>
+                            <span class="availability">Available</span>
+                            <div class="device-actions">
+                                <button>Edit</button>
+                                <button class="details">Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- DC4 -->
+                    <div class="device-card">
+                        <div class="device-image">
+                            <!-- IMAGE -->
+                            <div style="width: 120px; height: 80px; background-color: #ddd; display: flex; align-items: center; justify-content: center;">Laptop</div>
+                        </div>
+                        <div class="device-info">
+                            <h3 class="device-name">MacBook Air 13"</h3>
+                            <ul class="device-specs">
+                                <li><span class="spec-icon blue">💻</span> M2, 8GB RAM</li>
+                                <li><span class="spec-icon red">💾</span> 256GB SSD</li>
+                                <li><span class="spec-icon blue">🖥️</span> 13.6" Retina</li>
+                                <li><span class="spec-icon green">🔋</span> 18 Hour Battery</li>
+                            </ul>
+                            <span class="availability">Available</span>
+                            <div class="device-actions">
+                                <button>Edit</button>
+                                <button class="details">Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="DCScript.js"></script>
+</body>
+</html>
