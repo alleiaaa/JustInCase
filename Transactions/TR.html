@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JustInCase - Transactions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="TRSatyle.css">
+</head>
+<body>
+    <div class="container">
+        <!-- SIDE -->
+        <div class="sidebar" id="sidebar">
+            <div>
+                <div class="logo">
+                    <h1><span>Just</span><span>In</span><span>Case</span></h1>
+                    <p>Admin</p>
+                </div>
+                
+                <div class="menu-section">
+                    <div class="menu-title">DEVICE MANAGEMENT</div>
+                    <ul class="menu-items">
+                        <li class="menu-item">
+                            <i class="fas fa-desktop icon"></i> Device Catalog
+                        </li>
+                        <li class="menu-item">
+                            <i class="fas fa-clipboard-list icon"></i>Device Inventory
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="menu-section">
+                    <div class="menu-title">TRANSACTIONS</div>
+                    <ul class="menu-items">
+                        <li class="menu-item active">
+                            <i class="fas fa-exchange-alt icon"></i>Transactions
+                        </li>
+                        <li class="menu-item">
+                            <i class="fas fa-clock icon"></i>Late Returns
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="menu-section">
+                    <div class="menu-title">ADMINISTRATION</div>
+                    <ul class="menu-items">
+                        <li class="menu-item">
+                            <i class="fas fa-user-cog icon"></i>Account Settings
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="logout">
+                <ul class="menu-items">
+                    <li class="menu-item">
+                        <i class="fas fa-sign-out-alt icon"></i>Log out
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- MAIN -->
+        <div class="main-content" id="main-content">
+            <div class="header">
+                <button class="menu-toggle" id="menu-toggle">☰</button>
+                <div class="user-info">Hello, Professor!</div>
+            </div>
+            
+            <div class="content">
+                <h1 style="margin-bottom: 20px;">Transactions</h1>
+                
+                <div class="transaction-nav">
+                    <ul class="transaction-nav-list">
+                        <li class="transaction-nav-item active">Active</li>
+                        <li class="transaction-nav-item">Reservations <span>(1)</span></li>
+                        <li class="transaction-nav-item">History</li>
+                    </ul>
+                </div>
+                
+                <table class="transaction-table">
+                    <thead>
+                        <tr>
+                            <th>TRANSACTION ID</th>
+                            <th>USER</th>
+                            <th>DEVICE ID</th>
+                            <th>STATUS</th>
+                            <th>PICKUP TIME</th>
+                            <th>DUE TIME</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="transaction-id">TRX-001</td>
+                            <td>Juan Dela Cruz</td>
+                            <td>DEV-001</td>
+                            <td><span class="status-pill status-available">Available</span></td>
+                            <td>11:00 AM</td>
+                            <td>5:00 PM</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-button edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-button delete"><i class="fas fa-trash-alt"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="transaction-id">TRX-002</td>
+                            <td>Mang Kanor</td>
+                            <td>DEV-002</td>
+                            <td><span class="status-pill status-in-use">In Use</span></td>
+                            <td>11:00 AM</td>
+                            <td>5:00 PM</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-button edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-button delete"><i class="fas fa-trash-alt"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="transaction-id">TRX-003</td>
+                            <td>Wally Bayola</td>
+                            <td>DEV-003</td>
+                            <td><span class="status-pill status-maintenance">Maintenance</span></td>
+                            <td>11:00 AM</td>
+                            <td>5:00 PM</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-button edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-button delete"><i class="fas fa-trash-alt"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="transaction-id">TRX-004</td>
+                            <td>Mama Mo Jr.</td>
+                            <td>DEV-004</td>
+                            <td><span class="status-pill status-unavailable">Unavailable</span></td>
+                            <td>11:00 AM</td>
+                            <td>5:00 PM</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="action-button edit"><i class="fas fa-edit"></i></button>
+                                    <button class="action-button delete"><i class="fas fa-trash-alt"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="TRScript.js"></script>
+</body>
+</html>
