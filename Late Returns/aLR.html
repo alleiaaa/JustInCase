@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JustInCase - Late Returns</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="LR Satyle.css">
+</head>
+<body>
+    <div class="container">
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <div>
+                <div class="logo">
+                    <h1><span>Just</span><span>In</span><span>Case</span></h1>
+                    <p>Admin</p>
+                </div>
+                
+                <div class="menu-section">
+                    <div class="menu-title">DEVICE MANAGEMENT</div>
+                    <ul class="menu-items">
+                        <li class="menu-item">
+                            <i class="fas fa-desktop icon"></i> Device Catalog
+                        </li>
+                        <li class="menu-item">
+                            <i class="fas fa-clipboard-list icon"></i> Device Inventory
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="menu-section">
+                    <div class="menu-title">TRANSACTIONS</div>
+                    <ul class="menu-items">
+                        <li class="menu-item">
+                            <i class="fas fa-exchange-alt icon"></i> Transactions
+                        </li>
+                        <li class="menu-item active">
+                            <i class="fas fa-clock icon"></i> Late Returns
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="menu-section">
+                    <div class="menu-title">ADMINISTRATION</div>
+                    <ul class="menu-items">
+                        <li class="menu-item">
+                            <i class="fas fa-user-cog icon"></i> Account Settings
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="logout">
+                <ul class="menu-items">
+                    <li class="menu-item">
+                        <i class="fas fa-sign-out-alt icon"></i> Log out
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <div class="header">
+                <div></div>
+                <div class="user-info">Hello, Professor!</div>
+            </div>
+            
+            <div class="content">
+                <div class="search-container">
+                    <input type="text" class="search-bar" placeholder="Search by student ID, device ID...">
+                </div>
+                
+                <div class="tabs">
+                    <div class="tab active">Current Overdue <span class="tab-count">12</span></div>
+                    <div class="tab">Pending Resolution <span class="tab-count">5</span></div>
+                    <div class="tab">All Late Returns</div>
+                </div>
+                
+                <div class="deadline-notification">
+                    Return Deadline: 5:00 PM Today
+                </div>
+                
+                <table class="returns-table">
+                    <thead>
+                        <tr>
+                            <th>STUDENT ID</th>
+                            <th>STUDENT NAME</th>
+                            <th>DEVICE ID</th>
+                            <th>CHECKOUT DATE</th>
+                            <th>DUE TIME</th>
+                            <th>OVERDUE BY</th>
+                            <th>STATUS</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="student-id">STU-001</td>
+                            <td>Juan Dela Cruz</td>
+                            <td>DEV-001</td>
+                            <td>May 19, 2025</td>
+                            <td>5:00 PM</td>
+                            <td class="overdue-time">1h 43m</td>
+                            <td><span class="status-badge status-overdue">Overdue</span></td>
+                            <td>
+                                <div class="action-icons">
+                                    <i class="fas fa-edit action-icon edit-icon"></i>
+                                    <i class="fas fa-trash-alt action-icon delete-icon"></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="student-id">STU-002</td>
+                            <td>Mang Kanor</td>
+                            <td>DEV-002</td>
+                            <td>May 19, 2025</td>
+                            <td>5:00 PM</td>
+                            <td class="overdue-time">1h 43m</td>
+                            <td><span class="status-badge status-overdue">Overdue</span></td>
+                            <td>
+                                <div class="action-icons">
+                                    <i class="fas fa-edit action-icon edit-icon"></i>
+                                    <i class="fas fa-trash-alt action-icon delete-icon"></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="student-id">STU-003</td>
+                            <td>Wally Bayola</td>
+                            <td>DEV-003</td>
+                            <td>May 19, 2025</td>
+                            <td>5:00 PM</td>
+                            <td class="overdue-time">1h 43m</td>
+                            <td><span class="status-badge status-overdue">Overdue</span></td>
+                            <td>
+                                <div class="action-icons">
+                                    <i class="fas fa-edit action-icon edit-icon"></i>
+                                    <i class="fas fa-trash-alt action-icon delete-icon"></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="student-id">STU-004</td>
+                            <td>Mama Mo Jr.</td>
+                            <td>DEV-004</td>
+                            <td>May 19, 2025</td>
+                            <td>5:00 PM</td>
+                            <td class="overdue-time">1h 43m</td>
+                            <td><span class="status-badge status-overdue">Overdue</span></td>
+                            <td>
+                                <div class="action-icons">
+                                    <i class="fas fa-edit action-icon edit-icon"></i>
+                                    <i class="fas fa-trash-alt action-icon delete-icon"></i>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="LR Script.js"></script>
+</body>
+</html>

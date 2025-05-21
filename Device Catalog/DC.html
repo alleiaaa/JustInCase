@@ -74,21 +74,27 @@
                 <input type="text" class="search-bar" placeholder="Search Device">
                 
                 <div class="filters">
-                    <select class="filter-dropdown">
-                        <option>All Types</option>
-                        <option>Laptops</option>
-                        <option>Tablets</option>
-                        <option>Phones</option>
-                    </select>
-                    
-                    <select class="filter-dropdown">
-                        <option>All</option>
-                        <option>Available</option>
-                        <option>Checked Out</option>
-                    </select>
-                    
-                    <button class="add-button">Available</button>
-                </div>
+                    <div class="filter-left">
+                        <select class="filter-dropdown">
+                            <option>All Types</option>
+                            <option>Laptops</option>
+                            <option>Tablets</option>
+                            <option>Phones</option>
+                        </select>
+
+                        <select class="filter-dropdown">
+                            <option>All</option>
+                            <option>Available</option>
+                            <option>Checked Out</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-right">
+                        <button class="add-button active" data-filter="available">Available</button>
+                        <button class="add-button" data-filter="unavailable">Unavailable</button>
+                        <button class="add-button" data-filter="all">All</button>
+                    </div>
+                </div>  
                 
                 <div class="device-grid">
                     <!-- DC 1 -->
@@ -107,7 +113,7 @@
                             </ul>
                             <span class="availability">Available</span>
                             <div class="device-actions">
-                                <button>Edit</button>
+                                <button class="edit-button">Edit</button>
                                 <button class="details">Details</button>
                             </div>
                         </div>
@@ -129,7 +135,7 @@
                             </ul>
                             <span class="availability">Available</span>
                             <div class="device-actions">
-                                <button>Edit</button>
+                                <button class="edit-button">Edit</button>
                                 <button class="details">Details</button>
                             </div>
                         </div>
@@ -151,7 +157,7 @@
                             </ul>
                             <span class="availability">Available</span>
                             <div class="device-actions">
-                                <button>Edit</button>
+                                <button class="edit-button">Edit</button>
                                 <button class="details">Details</button>
                             </div>
                         </div>
@@ -173,7 +179,7 @@
                             </ul>
                             <span class="availability">Available</span>
                             <div class="device-actions">
-                                <button>Edit</button>
+                                <button class="edit-button">Edit</button>
                                 <button class="details">Details</button>
                             </div>
                         </div>
@@ -195,12 +201,45 @@
                             </ul>
                             <span class="availability">Available</span>
                             <div class="device-actions">
-                                <button>Edit</button>
+                                <button class="edit-button">Edit</button>
                                 <button class="details">Details</button>
                             </div>
                         </div>
                 </div>
-            </div>
+            <!-- Edit Modal -->
+                <div id="edit-modal" class="modal">
+                <div class="modal-content">
+                    <h2>Edit Device</h2>
+                    <form id="edit-form">
+                    <label>Device Name</label>
+                    <input type="text" id="edit-device-name" required />
+
+                    <label>Processor / RAM</label>
+                    <input type="text" id="edit-spec-cpu" />
+
+                    <label>Storage</label>
+                    <input type="text" id="edit-spec-storage" />
+
+                    <label>Display</label>
+                    <input type="text" id="edit-spec-display" />
+
+                    <label>Battery</label>
+                    <input type="text" id="edit-spec-battery" />
+
+                    <label>Availability</label>
+                    <select id="edit-availability">
+                        <option value="available">Available</option>
+                        <option value="unavailable">Unavailable</option>
+                    </select>
+
+                    <div class="modal-buttons">
+                        <button type="button" id="cancel-edit">Cancel</button>
+                        <button type="submit">Save</button>
+                    </div>
+                    </form>
+                </div>
+                </div>
+
         </div>
     </div>
 

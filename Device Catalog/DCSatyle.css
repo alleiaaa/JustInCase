@@ -171,10 +171,21 @@ body {
 
 .filters {
   display: flex;
-  gap: 15px;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
   flex-wrap: wrap;
 }
+
+.filter-left {
+  display: flex;
+  gap: 10px; 
+}
+.filter-right {
+  display: flex;
+  gap: 0; 
+}
+
 
 .filter-dropdown {
   padding: 8px 15px;
@@ -187,14 +198,28 @@ body {
 
 .add-button {
   padding: 8px 20px;
+  background-color: #ffffff;
+  color: #7C7979;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-weight: normal;
+  margin: 0;
+  transition: all 0.3s;
+}
+
+.add-button.active {
   background-color: #0066ff;
   color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
   font-weight: bold;
-  margin-left: auto;
+  border-color: #0066ff;
 }
+
+.add-button:hover {
+  background-color: #f0f0f0;
+}
+
+
 
 /* Device Cards - Improved Responsive Grid */
 .device-grid {
@@ -219,6 +244,75 @@ body {
   transform: translateY(-5px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
+/* Modal base */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #fff;
+  margin: 8% auto;
+  padding: 20px 30px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  font-family: 'Inter', sans-serif;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+}
+
+.modal-content label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: 600;
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.modal-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#cancel-edit {
+  background-color: #ccc;
+  color: #333;
+}
+
+.modal-buttons button[type="submit"] {
+  background-color: #0066ff;
+  color: white;
+}
+
 
 .device-image {
   height: 150px;
