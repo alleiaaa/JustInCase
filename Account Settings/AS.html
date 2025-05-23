@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JustInCase - Account Settings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="ASatyle.css">
+</head>
+<body>
+    <div class="container">
+        <!-- SIDEBAR -->
+        <div class="sidebar" id="sidebar">
+            <div>
+                <div class="logo">
+                    <h1><span>Just</span><span>In</span><span>Case</span></h1>
+                    <p>Admin</p>
+                </div>
+                
+                <div class="menu-section">
+                    <div class="menu-title">DEVICE MANAGEMENT</div>
+                    <ul class="menu-items">
+                        <li class="menu-item">
+                            <i class="fas fa-desktop icon"></i> Device Catalog
+                        </li>
+                        <li class="menu-item">
+                            <i class="fas fa-clipboard-list icon"></i>Device Inventory
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="menu-section">
+                    <div class="menu-title">TRANSACTIONS</div>
+                    <ul class="menu-items">
+                        <li class="menu-item">
+                            <i class="fas fa-exchange-alt icon"></i>Transactions
+                        </li>
+                        <li class="menu-item">
+                            <i class="fas fa-clock icon"></i>Late Returns
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="menu-section">
+                    <div class="menu-title">ADMINISTRATION</div>
+                    <ul class="menu-items">
+                        <li class="menu-item active">
+                            <i class="fas fa-user-cog icon"></i>Account Settings
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="logout">
+                <ul class="menu-items">
+                    <li class="menu-item">
+                        <i class="fas fa-sign-out-alt icon"></i>Log out
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- MAIN CONTENT -->
+        <div class="main-content" id="main-content">
+            <div class="header">
+                <button class="menu-toggle" id="menu-toggle">☰</button>
+                <div class="user-info">Hello, Professor!</div>
+            </div>
+            
+            <div class="content">
+                <div class="settings-container">
+                    <div class="settings-header">
+                        <h1 class="settings-title">Account Settings</h1>
+                        <p class="settings-subtitle">Manage your profile and preferences</p>
+                    </div>
+                    
+                    <div class="settings-content">
+                        <div class="tab-navigation">
+                            <button class="tab-button active">Profile</button>
+                        </div>
+                        
+                        <div class="profile-section">
+                            <div class="section-header">
+                                <h2 class="section-title">Personal Information</h2>
+                                <button class="edit-button" id="edit-profile-btn">
+                                    <i class="fas fa-edit"></i>
+                                    Edit Profile
+                                </button>
+                            </div>
+                            
+                            <div class="profile-info">
+                                <div class="profile-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="profile-details">
+                                    <h3 class="profile-name">Juan Dela Cruz</h3>
+                                    <p class="profile-id">2023-171883</p>
+                                    <p class="profile-department">Computer Science</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span class="info-label">First Name</span>
+                                    <span class="info-value">Juan</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Middle Name (Optional)</span>
+                                    <span class="info-value">N/A</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Last Name</span>
+                                    <span class="info-value">Dela Cruz</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">School Email</span>
+                                    <span class="info-value">juandelacruz@students.nu-dasma.edu.ph</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Program</span>
+                                    <span class="info-value">Computer Science</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Room Location</span>
+                                    <span class="info-value">Networking Room - 534</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Edit Profile</h2>
+            </div>
+            <form id="edit-form">
+                <div class="form-group">
+                    <label class="form-label">First Name</label>
+                    <input type="text" class="form-input" id="first-name" value="Juan" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Middle Name (Optional)</label>
+                    <input type="text" class="form-input" id="middle-name" value="">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Last Name</label>
+                    <input type="text" class="form-input" id="last-name" value="Dela Cruz" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">School Email</label>
+                    <input type="email" class="form-input" id="email" value="juandelacruz@students.nu-dasma.edu.ph" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Program</label>
+                    <input type="text" class="form-input" id="program" value="Computer Science" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Room Location</label>
+                    <input type="text" class="form-input" id="room" value="Networking Room - 534" required>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" class="btn btn-secondary" id="cancel-edit">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="AScript.js"></script>
+</body>
+</html>
