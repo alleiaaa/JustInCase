@@ -6,65 +6,16 @@
     <title>JustInCase - Transactions</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="TRSatyle.css">
+    <link rel="stylesheet" href="3TRSatyle.css">
+    <link rel="stylesheet" href="fragments.css">
 </head>
 <body>
-    <div class="container">
-        <!-- SIDE -->
-        <div class="sidebar" id="sidebar">
-            <div>
-                <div class="logo">
-                    <h1><span>Just</span><span>In</span><span>Case</span></h1>
-                    <p>Admin</p>
-                </div>
-                
-                <div class="menu-section">
-                    <div class="menu-title">DEVICE MANAGEMENT</div>
-                    <ul class="menu-items">
-                        <li class="menu-item">
-                            <i class="fas fa-desktop icon"></i> Device Catalog
-                        </li>
-                        <li class="menu-item">
-                            <i class="fas fa-clipboard-list icon"></i>Device Inventory
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="menu-section">
-                    <div class="menu-title">TRANSACTIONS</div>
-                    <ul class="menu-items">
-                        <li class="menu-item active">
-                            <i class="fas fa-exchange-alt icon"></i>Transactions
-                        </li>
-                        <li class="menu-item">
-                            <i class="fas fa-clock icon"></i>Late Returns
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="menu-section">
-                    <div class="menu-title">ADMINISTRATION</div>
-                    <ul class="menu-items">
-                        <li class="menu-item">
-                            <i class="fas fa-user-cog icon"></i>Account Settings
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="logout">
-                <ul class="menu-items">
-                    <li class="menu-item">
-                        <i class="fas fa-sign-out-alt icon"></i>Log out
-                    </li>
-                </ul>
-            </div>
-        </div>
+    <div id="sidebar-container"></div>
         
         <!-- MAIN -->
         <div class="main-content" id="main-content">
             <div class="header">
-                <button class="menu-toggle" id="menu-toggle">☰</button>
+                <img src="./assets/menu_icon.png" alt="menu" id="menu-toggle"></img>
                 <div class="user-info">Hello, Professor!</div>
             </div>
             
@@ -154,6 +105,6 @@
         </div>
     </div>
 
-    <script src="TRScript.js"></script>
+    <script src="3TRScript.js"></script>
 </body>
 </html>

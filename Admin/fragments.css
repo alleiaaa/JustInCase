@@ -1,0 +1,128 @@
+/* fragments.css - Sidebar Styles */
+
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(180deg, #1a73e8 0%, #4285f4 100%);
+    color: white;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.logo {
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    letter-spacing: -0.5px;
+}
+
+.logo h1 span:nth-child(1) {
+    color: #ffffff;
+}
+
+.logo h1 span:nth-child(2) {
+    color: #e8f0fe;
+}
+
+.logo h1 span:nth-child(3) {
+    color: #ffffff;
+}
+
+.logo p {
+    font-size: 12px;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+.menu-section {
+    padding: 5px 0;
+}
+
+.menu-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 10px 20px 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    font-weight: 500;
+    border-left: 3px solid transparent;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.menu-item.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-left-color: #ffffff;
+    color: white;
+    font-weight: 600;
+}
+
+.menu-item .icon {
+    width: 18px;
+    margin-right: 12px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.logout {
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 0;
+}
+
+.logout .menu-item {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.logout .menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        left: -100%;
+    }
+    
+    .sidebar.active {
+        left: 0;
+    }
+}

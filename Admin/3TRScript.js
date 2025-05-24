@@ -1,26 +1,46 @@
 // Wait for DOM to fully load before running JavaScript
-document.addEventListener('DOMContentLoaded', function() {
-    // Get DOM elements
+document.addEventListener("DOMContentLoaded", () => {
+    fetch('fragments.html')
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('sidebar-container').innerHTML = html;
+            initializeSidebar();
+        })
+        .catch(error => {
+            console.error('Error loading sidebar:', error);
+        });
+});
+
+function initializeSidebar() {
+    const menuToggle = document.getElementById('menu-toggle');
     const sidebar = document.getElementById('sidebar');
     const mainContent = document.getElementById('main-content');
-    const menuToggle = document.getElementById('menu-toggle');
-    
-    // Sidebar toggle functionality
-    menuToggle.addEventListener('click', function() {
-        sidebar.classList.toggle('active');
-        mainContent.classList.toggle('shifted');
-    });
-    
-    // Default to showing sidebar on larger screens
-    function checkWindowSize() {
-        if (window.innerWidth > 992) {
-            sidebar.classList.add('active');
-            mainContent.classList.add('shifted');
-        } else {
-            sidebar.classList.remove('active');
-            mainContent.classList.remove('shifted');
-        }
+
+    if (menuToggle && sidebar && mainContent) {
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            mainContent.classList.toggle('shifted');
+        });
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+                    sidebar.classList.remove('active');
+                    mainContent.classList.remove('shifted');
+                }
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                sidebar.classList.remove('active');
+                mainContent.classList.remove('shifted');
+            }
+        });
     }
+}
     
     // Run on page load
     checkWindowSize();
@@ -87,4 +107,3 @@ document.addEventListener('DOMContentLoaded', function() {
             // and then perform the delete operation if confirmed
         });
     });
-});

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JustInCase - Device Catalog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="1DCSatyle.css">
+    <link rel="stylesheet" href="fragments.css">
+</head>
+<body>
+    <div id="sidebar-container"></div>
+    
+    <div class="main-content" id="main-content">
+        <div class="header">
+            <img src="./assets/menu_icon.png" alt="menu" id="menu-toggle"></img>
+            <div class="user-info">Hello, Professor!</div>
+        </div>
+        
+        <div class="content">
+            <h1 style="margin-bottom: 20px;">Device Catalog</h1>
+            
+            <input type="text" class="search-bar" placeholder="Search Device">
+            
+            <div class="filters">
+                <div class="filter-left">
+                    <select class="filter-dropdown">
+                        <option>All Types</option>
+                        <option>Laptops</option>
+                        <option>Tablets</option>
+                        <option>Phones</option>
+                    </select>
+
+                    <select class="filter-dropdown">
+                        <option>All Status</option>
+                        <option>Available</option>
+                        <option>Checked Out</option>
+                    </select>
+                </div>
+
+                <div class="filter-right">
+                    <button class="add-button active" data-filter="available">Available</button>
+                    <button class="add-button" data-filter="unavailable">Unavailable</button>
+                    <button class="add-button" data-filter="all">All</button>
+                </div>
+            </div>  
+            
+            <div class="device-grid">
+                <!-- Device Card 1 -->
+                <div class="device-card">
+                    <div class="device-image">
+                        <div>💻 Laptop</div>
+                    </div>
+                    <div class="device-info">
+                        <h3 class="device-name">MacBook Pro 14"</h3>
+                        <ul class="device-specs">
+                            <li><span class="spec-icon blue">💻</span> Processor</li>
+                            <li><span class="spec-icon red">💾</span> RAM</li>
+                            <li><span class="spec-icon blue">🖥️</span> Storage</li>
+                            <li><span class="spec-icon green">🔋</span> OS</li>
+                        </ul>
+                        <span class="availability">Available</span>
+                        <div class="device-actions">
+                            <button class="edit-button">Edit Device</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Device Card 2 -->
+                <div class="device-card">
+                    <div class="device-image">
+                        <div>📱 Tablet</div>
+                    </div>
+                    <div class="device-info">
+                        <h3 class="device-name">iPad Pro 12.9"</h3>
+                        <ul class="device-specs">
+                            <li><span class="spec-icon blue">💻</span> Processor</li>
+                            <li><span class="spec-icon red">💾</span> RAM</li>
+                            <li><span class="spec-icon blue">🖥️</span> Storage</li>
+                            <li><span class="spec-icon green">⚙️</span> OS</li>
+                        </ul>
+                        <span class="availability">Available</span>
+                        <div class="device-actions">
+                            <button class="edit-button">Edit Device</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Device Card 3 -->
+                <div class="device-card">
+                    <div class="device-image">
+                        <div>📱 Phone</div>
+                    </div>
+                    <div class="device-info">
+                        <h3 class="device-name">iPhone 15 Pro</h3>
+                        <ul class="device-specs">
+                            <li><span class="spec-icon blue">💻</span> Processor</li>
+                            <li><span class="spec-icon red">💾</span> RAM</li>
+                            <li><span class="spec-icon blue">🖥️</span> Storage</li>
+                            <li><span class="spec-icon green">⚙️</span> OS</li>
+                        </ul>
+                        <span class="availability">Available</span>
+                        <div class="device-actions">
+                            <button class="edit-button">Edit Device</button>
+                        </div>
+                    </div>
+                </div> 
+                
+                <!-- Device Card 4 -->
+                <div class="device-card">
+                    <div class="device-image">
+                        <div>💻 Laptop</div>
+                    </div>
+                    <div class="device-info">
+                        <h3 class="device-name">MacBook Air 13"</h3>
+                        <ul class="device-specs">
+                            <li><span class="spec-icon blue">💻</span> Processor</li>
+                            <li><span class="spec-icon red">💾</span> RAM</li>
+                            <li><span class="spec-icon blue">🖥️</span> Storage</li>
+                            <li><span class="spec-icon green">⚙️</span> OS</li>
+                        </ul>
+                        <span class="availability">Available</span>
+                        <div class="device-actions">
+                            <button class="edit-button">Edit Device</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Device Card 5 -->
+                <div class="device-card">
+                    <div class="device-image">
+                        <div>📱 Tablet</div>
+                    </div>
+                    <div class="device-info">
+                        <h3 class="device-name">Samsung Galaxy Tab S9</h3>
+                        <ul class="device-specs">
+                            <li><span class="spec-icon blue">💻</span> Processor</li>
+                            <li><span class="spec-icon red">💾</span> RAM</li>
+                            <li><span class="spec-icon blue">🖥️</span> Storage</li>
+                            <li><span class="spec-icon green">⚙️</span> OS</li>
+                        </ul>
+                        <span class="availability">Available</span>
+                        <div class="device-actions">
+                            <button class="edit-button">Edit Device</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <h2>Edit Device</h2>
+            <form id="edit-form">
+                <label>Device Name</label>
+                <input type="text" id="edit-device-name" required />
+
+                <label>Processor</label>
+                <input type="text" id="edit-spec-cpu" placeholder="e.g., M2 Chip, A17 Pro" />
+
+                <label>RAM</label>
+                <input type="text" id="edit-spec-storage" placeholder="e.g., 8GB RAM, 16GB RAM" />
+
+                <label>Storage</label>
+                <input type="text" id="edit-spec-display" placeholder="e.g., 256GB SSD, 512GB Storage" />
+
+                <label>Operating System</label>
+                <input type="text" id="edit-spec-battery" placeholder="e.g., macOS Ventura, iOS 17" />
+
+                <label>Availability</label>
+                <select id="edit-availability">
+                    <option value="available">Available</option>
+                    <option value="unavailable">Unavailable</option>
+                </select>
+
+                <div class="modal-buttons">
+                    <button type="button" id="cancel-edit">Cancel</button>
+                    <button type="submit">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="1DCScript.js"></script>
+</body>
+</html>

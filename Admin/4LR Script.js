@@ -1,34 +1,46 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Elements
-    const sidebar = document.querySelector('.sidebar');
-    const mainContent = document.querySelector('.main-content');
-    const menuToggle = document.createElement('button');
-    
-    
-    menuToggle.className = 'menu-toggle';
-    menuToggle.innerHTML = '☰';
-    menuToggle.style.display = 'none';
-    menuToggle.style.position = 'fixed';
-    menuToggle.style.top = '15px';
-    menuToggle.style.left = '15px';
-    menuToggle.style.zIndex = '1001';
-    menuToggle.style.backgroundColor = '#0066ff';
-    menuToggle.style.color = 'white';
-    menuToggle.style.border = 'none';
-    menuToggle.style.borderRadius = '5px';
-    menuToggle.style.padding = '8px 12px';
-    menuToggle.style.cursor = 'pointer';
-    menuToggle.style.fontSize = '18px';
-    
-    document.body.appendChild(menuToggle);
-    
-    
-    function toggleSidebar() {
-        sidebar.classList.toggle('active');
-        mainContent.classList.toggle('shifted');
+// Load sidebar dynamically from fragments.html
+document.addEventListener("DOMContentLoaded", () => {
+    fetch('fragments.html')
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('sidebar-container').innerHTML = html;
+            initializeSidebar();
+        })
+        .catch(error => {
+            console.error('Error loading sidebar:', error);
+        });
+});
+
+function initializeSidebar() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('main-content');
+
+    if (menuToggle && sidebar && mainContent) {
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            mainContent.classList.toggle('shifted');
+        });
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+                    sidebar.classList.remove('active');
+                    mainContent.classList.remove('shifted');
+                }
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                sidebar.classList.remove('active');
+                mainContent.classList.remove('shifted');
+            }
+        });
     }
-    
-    menuToggle.addEventListener('click', toggleSidebar);
+}
     
     // TAB
     const tabs = document.querySelectorAll('.tab');
@@ -124,4 +136,3 @@ document.addEventListener('DOMContentLoaded', function() {
     makeTableResponsive();
     
     window.addEventListener('resize', makeTableResponsive);
-});

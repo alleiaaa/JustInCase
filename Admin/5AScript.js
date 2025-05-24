@@ -1,12 +1,46 @@
-// Sidebar toggle functionality
-const menuToggle = document.getElementById('menu-toggle');
-const sidebar = document.getElementById('sidebar');
-const mainContent = document.getElementById('main-content');
-
-menuToggle.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
-    mainContent.classList.toggle('shifted');
+// Load sidebar dynamically from fragments.html
+document.addEventListener("DOMContentLoaded", () => {
+    fetch('fragments.html')
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('sidebar-container').innerHTML = html;
+            initializeSidebar();
+        })
+        .catch(error => {
+            console.error('Error loading sidebar:', error);
+        });
 });
+
+function initializeSidebar() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('main-content');
+
+    if (menuToggle && sidebar && mainContent) {
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            mainContent.classList.toggle('shifted');
+        });
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+                    sidebar.classList.remove('active');
+                    mainContent.classList.remove('shifted');
+                }
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                sidebar.classList.remove('active');
+                mainContent.classList.remove('shifted');
+            }
+        });
+    }
+}
 
 // Edit profile modal functionality
 const editBtn = document.getElementById('edit-profile-btn');
