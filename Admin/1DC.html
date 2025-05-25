@@ -18,8 +18,8 @@
             <div class="user-info">Hello, Professor!</div>
         </div>
         
-        <div class="content">
-            <h1 style="margin-bottom: 20px;">Device Catalog</h1>
+           <div class="content">
+            <h1 class="page-title">Device Catalog</h1>
             
             <input type="text" class="search-bar" placeholder="Search Device">
             
@@ -55,10 +55,10 @@
                     <div class="device-info">
                         <h3 class="device-name">MacBook Pro 14"</h3>
                         <ul class="device-specs">
-                            <li><span class="spec-icon blue">💻</span> Processor</li>
-                            <li><span class="spec-icon red">💾</span> RAM</li>
-                            <li><span class="spec-icon blue">🖥️</span> Storage</li>
-                            <li><span class="spec-icon green">🔋</span> OS</li>
+                            <li><span class="spec-icon blue">💻</span> M2 Pro Chip</li>
+                            <li><span class="spec-icon red">💾</span> 16GB RAM</li>
+                            <li><span class="spec-icon blue">🖥️</span> 512GB SSD</li>
+                            <li><span class="spec-icon green">🔋</span> macOS Ventura</li>
                         </ul>
                         <span class="availability">Available</span>
                         <div class="device-actions">
@@ -75,10 +75,10 @@
                     <div class="device-info">
                         <h3 class="device-name">iPad Pro 12.9"</h3>
                         <ul class="device-specs">
-                            <li><span class="spec-icon blue">💻</span> Processor</li>
-                            <li><span class="spec-icon red">💾</span> RAM</li>
-                            <li><span class="spec-icon blue">🖥️</span> Storage</li>
-                            <li><span class="spec-icon green">⚙️</span> OS</li>
+                            <li><span class="spec-icon blue">💻</span> M2 Chip</li>
+                            <li><span class="spec-icon red">💾</span> 8GB RAM</li>
+                            <li><span class="spec-icon blue">🖥️</span> 256GB Storage</li>
+                            <li><span class="spec-icon green">⚙️</span> iPadOS 17</li>
                         </ul>
                         <span class="availability">Available</span>
                         <div class="device-actions">
@@ -95,10 +95,10 @@
                     <div class="device-info">
                         <h3 class="device-name">iPhone 15 Pro</h3>
                         <ul class="device-specs">
-                            <li><span class="spec-icon blue">💻</span> Processor</li>
-                            <li><span class="spec-icon red">💾</span> RAM</li>
-                            <li><span class="spec-icon blue">🖥️</span> Storage</li>
-                            <li><span class="spec-icon green">⚙️</span> OS</li>
+                            <li><span class="spec-icon blue">💻</span> A17 Pro Chip</li>
+                            <li><span class="spec-icon red">💾</span> 8GB RAM</li>
+                            <li><span class="spec-icon blue">🖥️</span> 128GB Storage</li>
+                            <li><span class="spec-icon green">⚙️</span> iOS 17</li>
                         </ul>
                         <span class="availability">Available</span>
                         <div class="device-actions">
@@ -115,10 +115,10 @@
                     <div class="device-info">
                         <h3 class="device-name">MacBook Air 13"</h3>
                         <ul class="device-specs">
-                            <li><span class="spec-icon blue">💻</span> Processor</li>
-                            <li><span class="spec-icon red">💾</span> RAM</li>
-                            <li><span class="spec-icon blue">🖥️</span> Storage</li>
-                            <li><span class="spec-icon green">⚙️</span> OS</li>
+                            <li><span class="spec-icon blue">💻</span> M2 Chip</li>
+                            <li><span class="spec-icon red">💾</span> 8GB RAM</li>
+                            <li><span class="spec-icon blue">🖥️</span> 256GB SSD</li>
+                            <li><span class="spec-icon green">⚙️</span> macOS Ventura</li>
                         </ul>
                         <span class="availability">Available</span>
                         <div class="device-actions">
@@ -135,10 +135,30 @@
                     <div class="device-info">
                         <h3 class="device-name">Samsung Galaxy Tab S9</h3>
                         <ul class="device-specs">
-                            <li><span class="spec-icon blue">💻</span> Processor</li>
-                            <li><span class="spec-icon red">💾</span> RAM</li>
-                            <li><span class="spec-icon blue">🖥️</span> Storage</li>
-                            <li><span class="spec-icon green">⚙️</span> OS</li>
+                            <li><span class="spec-icon blue">💻</span> Snapdragon 8 Gen 2</li>
+                            <li><span class="spec-icon red">💾</span> 12GB RAM</li>
+                            <li><span class="spec-icon blue">🖥️</span> 256GB Storage</li>
+                            <li><span class="spec-icon green">⚙️</span> Android 14</li>
+                        </ul>
+                        <span class="availability">Available</span>
+                        <div class="device-actions">
+                            <button class="edit-button">Edit Device</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Device Card 6 -->
+                <div class="device-card">
+                    <div class="device-image">
+                        <div>💻 Laptop</div>
+                    </div>
+                    <div class="device-info">
+                        <h3 class="device-name">Dell XPS 13</h3>
+                        <ul class="device-specs">
+                            <li><span class="spec-icon blue">💻</span> Intel i7-1365U</li>
+                            <li><span class="spec-icon red">💾</span> 16GB RAM</li>
+                            <li><span class="spec-icon blue">🖥️</span> 512GB SSD</li>
+                            <li><span class="spec-icon green">⚙️</span> Windows 11</li>
                         </ul>
                         <span class="availability">Available</span>
                         <div class="device-actions">
@@ -151,38 +171,51 @@
     </div>
 
     <!-- Edit Modal -->
-    <div id="edit-modal" class="modal">
-        <div class="modal-content">
-            <h2>Edit Device</h2>
-            <form id="edit-form">
-                <label>Device Name</label>
-                <input type="text" id="edit-device-name" required />
-
-                <label>Processor</label>
-                <input type="text" id="edit-spec-cpu" placeholder="e.g., M2 Chip, A17 Pro" />
-
-                <label>RAM</label>
-                <input type="text" id="edit-spec-storage" placeholder="e.g., 8GB RAM, 16GB RAM" />
-
-                <label>Storage</label>
-                <input type="text" id="edit-spec-display" placeholder="e.g., 256GB SSD, 512GB Storage" />
-
-                <label>Operating System</label>
-                <input type="text" id="edit-spec-battery" placeholder="e.g., macOS Ventura, iOS 17" />
-
-                <label>Availability</label>
-                <select id="edit-availability">
-                    <option value="available">Available</option>
-                    <option value="unavailable">Unavailable</option>
-                </select>
-
-                <div class="modal-buttons">
-                    <button type="button" id="cancel-edit">Cancel</button>
-                    <button type="submit">Save Changes</button>
-                </div>
-            </form>
+    <div class="modal-overlay hidden" id="edit-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Edit Device</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-form">
+                    <!-- Form Fields -->
+                    <div class="modal-form-group">
+                        <label for="edit-device-name">Device Name</label>
+                        <input type="text" id="edit-device-name" class="modal-form-control" required>
+                    </div>
+                    <div class="modal-form-group">
+                        <label for="edit-spec-cpu">Processor</label>
+                        <input type="text" id="edit-spec-cpu" class="modal-form-control">
+                    </div>
+                    <div class="modal-form-group">
+                        <label for="edit-spec-storage">RAM</label>
+                        <input type="text" id="edit-spec-storage" class="modal-form-control">
+                    </div>
+                    <div class="modal-form-group">
+                        <label for="edit-spec-display">Storage</label>
+                        <input type="text" id="edit-spec-display" class="modal-form-control">
+                    </div>
+                    <div class="modal-form-group">
+                        <label for="edit-spec-battery">Operating System</label>
+                        <input type="text" id="edit-spec-battery" class="modal-form-control">
+                    </div>
+                    <div class="modal-form-group">
+                        <label for="edit-availability">Availability</label>
+                        <select id="edit-availability" class="modal-form-control">
+                            <option value="available">Available</option>
+                            <option value="unavailable">Unavailable</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="modal-button modal-button-cancel">Cancel</button>
+                <button type="submit" form="edit-form" class="modal-button modal-button-confirm">Save Changes</button>
+            </div>
         </div>
     </div>
+
 
     <script src="1DCScript.js"></script>
 </body>
