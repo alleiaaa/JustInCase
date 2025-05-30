@@ -4,11 +4,32 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(html => {
             document.getElementById('sidebar-container').innerHTML = html;
             initializeSidebar();
+            setActiveNavigation('Device Inventory'); // Set active for Device Inventory
+            initializeModals();
         })
         .catch(error => {
             console.error('Error loading sidebar:', error);
         });
 });
+// SHARED FUNCTION - Add this to each script file
+function setActiveNavigation(pageName) {
+    // Remove any existing active classes
+    const menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(item => item.classList.remove('active'));
+    
+    // Find and activate the corresponding menu item
+    const menuLinks = document.querySelectorAll('.menu-link');
+    menuLinks.forEach(link => {
+        const linkText = link.textContent.trim();
+        
+        if (linkText.includes(pageName)) {
+            const menuItem = link.closest('.menu-item');
+            if (menuItem) {
+                menuItem.classList.add('active');
+            }
+        }
+    });
+}
 
 function initializeSidebar() {
     const menuToggle = document.getElementById('menu-toggle');
@@ -21,7 +42,13 @@ function initializeSidebar() {
             mainContent.classList.toggle('shifted');
         });
 
-        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', e => {
+            const isClickInside = sidebar.contains(e.target) || menuToggle.contains(e.target);
+            if (!isClickInside || e.target.closest('.menu-item')) {
+                sidebar.classList.remove('active');
+            }
+        });
+
         document.addEventListener('click', (e) => {
             if (window.innerWidth <= 768) {
                 if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
@@ -31,7 +58,6 @@ function initializeSidebar() {
             }
         });
 
-        // Handle window resize
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768) {
                 sidebar.classList.remove('active');
@@ -40,33 +66,6 @@ function initializeSidebar() {
         });
     }
 }
-
-  // Function to set active menu item based on URL
-  function setActiveMenuItem() {
-    const menuItems = document.querySelectorAll('.menu-item');
-    const currentPage = window.location.pathname.split("/").pop().split('.')[0].toLowerCase();
-
-    menuItems.forEach(item => {
-      item.classList.remove('active');
-      const itemText = item.textContent.trim().toLowerCase().replace(/\s+/g, '');
-
-      if (itemText.includes(currentPage)) {
-        item.classList.add('active');
-      }
-    });
-  }
-
-  // Initial active menu item based on URL
-  setActiveMenuItem();
-
-  // Add click listeners to menu items to update active class dynamically
-  const menuItems = document.querySelectorAll('.menu-item');
-  menuItems.forEach(item => {
-    item.addEventListener('click', () => {
-      menuItems.forEach(i => i.classList.remove('active'));
-      item.classList.add('active');
-    });
-  });
 
   // Device Inventory page row hover effect
   if (document.body.id === 'device-inventory-page') {

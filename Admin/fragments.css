@@ -70,30 +70,42 @@
 }
 
 .menu-item {
-    display: flex;
-    align-items: center;
-    padding: 12px 20px;
-    color: rgba(255, 255, 255, 0.9);
-    cursor: pointer;
     transition: all 0.2s ease;
-    font-size: 14px;
-    font-weight: 500;
     border-left: 3px solid transparent;
 }
 
 .menu-item:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    color: white;
 }
 
 .menu-item.active {
     background-color: rgba(255, 255, 255, 0.15);
     border-left-color: #ffffff;
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.menu-item:hover .menu-link {
+    color: white;
+}
+
+.menu-item.active .menu-link {
     color: white;
     font-weight: 600;
 }
 
-.menu-item .icon {
+.menu-link .icon {
     width: 18px;
     margin-right: 12px;
     font-size: 16px;
@@ -106,12 +118,11 @@
     padding: 10px 0;
 }
 
-.logout .menu-item {
+.logout .menu-link {
     color: rgba(255, 255, 255, 0.8);
 }
 
-.logout .menu-item:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+.logout .menu-item:hover .menu-link {
     color: white;
 }
 
@@ -126,8 +137,6 @@
         left: 0;
     }
 }
-
-/* Add this to your fragments.css file */
 
 /* MODAL STYLES */
 .modal-template {

@@ -7,12 +7,33 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(html => {
             document.getElementById('sidebar-container').innerHTML = html;
             initializeSidebar();
-            initializeModals(); // Initialize modals after sidebar
+            setActiveNavigation('Device Catalog'); // Set active for Device Catalog
+            initializeModals();
         })
         .catch(error => {
             console.error('Error loading sidebar:', error);
         });
 });
+
+// SHARED FUNCTION - Add this to each script file
+function setActiveNavigation(pageName) {
+    // Remove any existing active classes
+    const menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(item => item.classList.remove('active'));
+    
+    // Find and activate the corresponding menu item
+    const menuLinks = document.querySelectorAll('.menu-link');
+    menuLinks.forEach(link => {
+        const linkText = link.textContent.trim();
+        
+        if (linkText.includes(pageName)) {
+            const menuItem = link.closest('.menu-item');
+            if (menuItem) {
+                menuItem.classList.add('active');
+            }
+        }
+    });
+}
 
 function initializeSidebar() {
     const menuToggle = document.getElementById('menu-toggle');
@@ -23,6 +44,13 @@ function initializeSidebar() {
         menuToggle.addEventListener('click', () => {
             sidebar.classList.toggle('active');
             mainContent.classList.toggle('shifted');
+        });
+
+        document.addEventListener('click', e => {
+            const isClickInside = sidebar.contains(e.target) || menuToggle.contains(e.target);
+            if (!isClickInside || e.target.closest('.menu-item')) {
+                sidebar.classList.remove('active');
+            }
         });
 
         document.addEventListener('click', (e) => {
@@ -71,6 +99,7 @@ function initializeModals() {
         });
     });
 
+    
     // SEARCH FUNCTIONALITY
     const searchBar = document.querySelector('.search-bar');
     if (searchBar) {

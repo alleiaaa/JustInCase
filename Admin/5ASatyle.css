@@ -307,7 +307,7 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .content {
         padding: 20px;
     }
@@ -337,7 +337,7 @@ body {
     }
 
     .modal-content {
-        width: 95%;
+        width: 100%;
         padding: 24px;
     }
 }
